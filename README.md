@@ -50,4 +50,4 @@ LiveStageAssistant is now implementing OR4B3 on `or4b3-deterministic-local-engin
 
 ## LiveStageAssistant integration status
 
-LiveStageAssistant OR4B3 is merged into `realtime-voice-architecture` as `e244af4a2f5d474005ff6803c5818aa25f4f87aa`. LSA now consumes the gateway contract generically at runtime without embedding mixer or QLC command semantics. PR CI passed on Python 3.11/3.12; post-merge CI is running. Pi end-to-end acceptance remains pending.
+LiveStageAssistant OR4B3 is merged into `realtime-voice-architecture` as `e244af4a2f5d474005ff6803c5818aa25f4f87aa`. LSA now consumes the gateway contract generically at runtime without embedding mixer or QLC command semantics. PR and post-merge CI passed on Python 3.11/3.12. Pi end-to-end acceptance remains pending.
