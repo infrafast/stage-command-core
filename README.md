@@ -51,3 +51,8 @@ LiveStageAssistant is now implementing OR4B3 on `or4b3-deterministic-local-engin
 ## LiveStageAssistant integration status
 
 LiveStageAssistant OR4B3 is merged into `realtime-voice-architecture` as `e244af4a2f5d474005ff6803c5818aa25f4f87aa`. LSA now consumes the gateway contract generically at runtime without embedding mixer or QLC command semantics. PR and post-merge CI passed on Python 3.11/3.12. Pi end-to-end acceptance remains pending.
+
+
+## Shared consumer pin
+
+QLCPlus-MCP and XMSeries-MCP now both pin this library at commit `fa9f8baef06a668efb18b1bfc50060335689f287`. The QLC alignment was merged as `b46f0c5d9aa859281976bec48090dd9a8f0bfffe` with Node 20.20/22 PR and post-merge CI green. LiveStageAssistant enforces the matching `lsa-command-gateway/v1` protocol generically.
