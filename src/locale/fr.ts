@@ -13,6 +13,7 @@ export const frLocaleHooks = defineLocaleHooks({
     decimalSeparators: [",", "."],
     positiveWords: ["plus"],
     negativeWords: ["moins"],
+    percentSuffixes: ["%", "pour cent"],
   },
   durations: {
     canonicalizeDuration(input: string): string {
