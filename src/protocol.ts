@@ -4,11 +4,16 @@ export type GatewayProtocol = typeof GATEWAY_PROTOCOL;
 export type CommandEffect = "none" | "read" | "write";
 export type AnalyzeStatus = "unrecognized" | "ready" | "clarification";
 
+export interface GatewayCommandContext {
+  [key: string]: unknown;
+}
+
 export interface AnalyzeCommandRequest {
   protocol: GatewayProtocol;
   text: string;
   locale?: string;
   continuationToken?: string;
+  context?: GatewayCommandContext;
 }
 
 export interface AnalyzeUnrecognized {
