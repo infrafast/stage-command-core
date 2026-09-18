@@ -38,6 +38,6 @@ See `docs/protocol.md` for the protocol contract.
 ## Current consumers
 
 - QLCPlus-MCP OR4B1 is merged on `main` and pins this package by exact Git commit for the first deterministic Local gateway vertical slice.
-- XMSeries-MCP remains the next consumer planned for OR4B2.
+- XMSeries-MCP OR4B2 is now in implementation on PR #11, pinned to commit `fa9f8baef06a668efb18b1bfc50060335689f287`; automated CI is the next gate.
 
 For Git-based consumers, the package defines a `prepare` script so `dist/` is built during installation even though generated output is not committed.
