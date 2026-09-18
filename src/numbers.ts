@@ -8,6 +8,7 @@ export interface NumberLocaleHooks {
   decimalSeparators?: readonly string[];
   positiveWords?: readonly string[];
   negativeWords?: readonly string[];
+  percentSuffixes?: readonly string[];
 }
 
 function escapeRegExp(value: string): string {
@@ -73,8 +74,16 @@ export function parsePercentage(
   input: string,
   hooks: NumberLocaleHooks = {},
 ): ParsedPercentage | null {
-  const match = input.trim().match(/^(.*?)(?:\s*%|\s+pour\s*cent)$/iu);
-  if (!match?.[1]) return null;
-  const parsed = parseNumericLiteral(match[1], hooks);
-  return parsed ? {...parsed, unit: "percent"} : null;
+  const suffixes = hooks.percentSuffixes ?? ["%"];
+  const trimmed = input.trim();
+
+  for (const suffix of suffixes) {
+    const re = new RegExp("^(.*?)\\s*" + escapeRegExp(suffix) + "$", "iu");
+    const match = trimmed.match(re);
+    if (!match?.[1]) continue;
+    const parsed = parseNumericLiteral(match[1], hooks);
+    if (parsed) return {...parsed, unit: "percent"};
+  }
+
+  return null;
 }
