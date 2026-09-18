@@ -41,3 +41,8 @@ See `docs/protocol.md` for the protocol contract.
 - XMSeries-MCP OR4B2 is merged on `main` as `0256b3d66dcdf6594f25e8aa0b6fe7ecec07bfed`, pinned to this package at commit `fa9f8baef06a668efb18b1bfc50060335689f287`; PR and post-merge Node 20.20/22 CI are green.
 
 For Git-based consumers, the package defines a `prepare` script so `dist/` is built during installation even though generated output is not committed.
+
+
+## OR4B3 integration status
+
+LiveStageAssistant is now implementing OR4B3 on `or4b3-deterministic-local-engine`, consuming the `lsa-command-gateway/v1` contract generically for capability discovery, analysis, arbitration and execution. The LSA work is not yet CI/live validated.
