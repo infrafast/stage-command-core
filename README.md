@@ -79,7 +79,7 @@ Example:
 }
 ```
 
-The field is optional and additive. Gateways that do not need the context may ignore it. Domain-neutral hosts must not resolve mixer, lighting, routing, or other business semantics themselves.
+The field is optional and additive. Gateways that do not need the context may ignore it. Domain-neutral hosts must not resolve mixer, lighting, routing, or other business semantics themselves. The generic context contract merged as `32662f9394e38f1a434e0c3ddf0a6007fb9b57d5`; QLCPlus-MCP accepts/ignores it, LiveStageAssistant forwards it, and XMSeries-MCP may interpret speaker metadata inside its own domain.
 
 ## OR4C live acceptance readiness
 
