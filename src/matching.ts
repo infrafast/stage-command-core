@@ -3,8 +3,12 @@ export type MatchResult<T> =
   | {kind: "unique"; value: T; matches: readonly [T]}
   | {kind: "ambiguous"; matches: readonly T[]};
 
+/**
+ * Case-insensitive but accent-sensitive comparison.
+ * "Blue Speed" == "blue speed", while "Été" != "Ete".
+ */
 export function exactText(a: string, b: string, locale = "fr-FR"): boolean {
-  return a.localeCompare(b, locale, {sensitivity: "base", usage: "search"}) === 0;
+  return a.localeCompare(b, locale, {sensitivity: "accent", usage: "search"}) === 0;
 }
 
 export function containsText(haystack: string, needle: string): boolean {
